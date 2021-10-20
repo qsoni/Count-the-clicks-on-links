@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 import argparse
 
 
-def shorten_link(headers, user_link):
+def shorten_link(headers, link):
   body = {
-    'long_url': user_link
+    'long_url': link
   }
   url = 'https://api-ssl.bitly.com/v4/bitlinks'
   response = requests.post(url, headers=headers, json=body)
@@ -23,8 +23,8 @@ def count_clicks(headers, bitlink):
   return clicks_count['total_clicks']
   
 
-def is_bitlink(headers, user_link):
-  url = f'https://api-ssl.bitly.com/v4/bitlinks/{user_link}'
+def is_bitlink(headers, link):
+  url = f'https://api-ssl.bitly.com/v4/bitlinks/{link}'
   response = requests.get(url, headers=headers)
   return response.ok
 
