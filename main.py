@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import argparse
 
 
-
 def shorten_link(headers, user_link):
   body = {
     'long_url': user_link
