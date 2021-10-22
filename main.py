@@ -6,12 +6,6 @@ from dotenv import load_dotenv
 import requests
 
 
-
-
-
-
-
-
 def shorten_link(headers, link):
   body = {
     'long_url': link
